@@ -266,17 +266,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\screens.h" />
-    <ClInclude Include="Tile.h" />
+    <ClInclude Include="src\Tiles\Tile.h" />
+    <ClInclude Include="src\Tiles\TileManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="game.cpp" />
+    <ClCompile Include="src\game.cpp" />
     <ClCompile Include="src\raylib_game_OLD.c" />
     <ClCompile Include="src\screen_ending.c" />
     <ClCompile Include="src\screen_gameplay.c" />
     <ClCompile Include="src\screen_logo.c" />
     <ClCompile Include="src\screen_options.c" />
     <ClCompile Include="src\screen_title.c" />
-    <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="src\Tiles\Tile.cpp" />
+    <ClCompile Include="src\Tiles\TileManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\raylib-master\raylib.vcxproj">
