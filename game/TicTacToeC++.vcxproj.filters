@@ -18,6 +18,7 @@
     <ClInclude Include="src\Tiles\TileManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Gameplay.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\raylib_game_OLD.c">
@@ -47,5 +48,6 @@
     <ClCompile Include="src\Tiles\TileManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Gameplay.cpp" />
   </ItemGroup>
 </Project>

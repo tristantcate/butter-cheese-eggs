@@ -1,6 +1,7 @@
 #pragma once
 #include "raylib.h"
 #include "Tile.h"
+#include <vector>
 
 class TileManager {
 
@@ -18,6 +19,7 @@ private:
 
 	const float m_tileSize;
 
+	void AddWinningTiles(std::vector<Tile*>& a_winningTiles, Tile::TileState a_tileState, Vector2 a_tile1, Vector2 a_tile2, Vector2 a_tile3);
 
 public:
 	/// <summary>
@@ -56,8 +58,13 @@ public:
 	};
 
 	Tile* GetTiles();
+	Tile& GetTileAt(unsigned int a_x, unsigned int a_y);
+	Tile& GetTileAt(Vector2 a_at);
+	Tile* GetTileAtPos(const Vector2& a_pos);
 
-	Tile& GetTileAt(int a_x, int a_y);
+	void SetAllBackgroundColor(const Color& a_color);
+
+	std::vector<Tile*> ProcessPlacementWin(Tile::TileState a_tileState);
 
 	void DrawTiles();
 	

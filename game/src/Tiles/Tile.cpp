@@ -16,19 +16,20 @@ void Tile::SetTileData(Vector2 a_anchorPos, Vector2 a_size)
 	m_tileRect.width = a_size.x;
 	m_tileRect.height = a_size.y;
 
-	m_backgroundColor = YELLOW;
+	m_backgroundColor = DARKBLUE;
 	m_currentTileState = TileState::Empty;
+	m_objectColor = ORANGE;
 }
 
 
 
 void Tile::Draw()
 {
-	DrawRectangleV(m_topLeftAnchorPos, m_size, m_backgroundColor);
+	DrawRectangleV(m_topLeftAnchorPos, m_size, m_currentBGColor);
 
 	if (m_currentTileState == TileState::Circle) 
 	{
-		DrawRing(m_center, 50.0f, 60.0f, 0, 360, 64, GREEN);
+		DrawRing(m_center, 50.0f, 60.0f, 0, 360, 64, m_objectColor);
 	}
 	else if (m_currentTileState == TileState::Square)
 	{
@@ -49,8 +50,8 @@ void Tile::Draw()
 		
 		Vector2 halfSize = { -m_size.x / 2.0f, -m_size.y / 2.0f };
 
-		DrawRectanglePro(rect, {halfLineSize, halfLineSize }, -45, GREEN);
-		DrawRectanglePro(rect2, { halfLineSize, halfLineSize }, 45, GREEN);
+		DrawRectanglePro(rect, {halfLineSize, halfLineSize }, -45, m_objectColor);
+		DrawRectanglePro(rect2, { halfLineSize, halfLineSize }, 45, m_objectColor);
 		//DrawLineBezier(Vector2Subtract(m_center, m_size), Vector2Add(m_center, m_size), 10.0f, GREEN);
 	}
 }
@@ -62,6 +63,11 @@ bool Tile::IsHoveringOver(Vector2 a_pos)
 
 void Tile::SetBackgroundColor(Color a_color)
 {
-	m_backgroundColor = a_color;
+	m_currentBGColor = a_color;
+}
+
+void Tile::ResetBackgroundColor()
+{
+	m_currentBGColor = m_backgroundColor;
 }
 

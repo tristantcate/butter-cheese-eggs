@@ -24,6 +24,7 @@ public:
 	bool IsHoveringOver(Vector2 a_pos);
 
 	void SetBackgroundColor(Color a_color);
+	void ResetBackgroundColor();
 
 	void Draw();
 
@@ -36,6 +37,8 @@ private:
 	Rectangle m_tileRect;
 
 	TileState m_currentTileState;
-	Color m_backgroundColor;
 
+	Color m_currentBGColor;
+	Color m_backgroundColor;
+	Color m_objectColor;
 };

@@ -265,12 +265,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Gameplay.h" />
     <ClInclude Include="src\screens.h" />
     <ClInclude Include="src\Tiles\Tile.h" />
     <ClInclude Include="src\Tiles\TileManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\game.cpp" />
+    <ClCompile Include="src\Gameplay.cpp" />
     <ClCompile Include="src\raylib_game_OLD.c" />
     <ClCompile Include="src\screen_ending.c" />
     <ClCompile Include="src\screen_gameplay.c" />
