@@ -266,6 +266,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\screens.h" />
+    <ClInclude Include="Tile.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="game.cpp" />
@@ -275,6 +276,7 @@
     <ClCompile Include="src\screen_logo.c" />
     <ClCompile Include="src\screen_options.c" />
     <ClCompile Include="src\screen_title.c" />
+    <ClCompile Include="Tile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\raylib-master\raylib.vcxproj">
