@@ -21,8 +21,14 @@ void Gameplay::SetGameState(GameState a_to)
 	if (a_to == GameState::Draw){
 		m_bottomText = "It's a draw...";
 	}
+
 	m_gameState = a_to;
 
+}
+
+bool Gameplay::IsGameEnded()
+{
+	return m_gameState == GameState::CircleWin || m_gameState == GameState::SquareWin || m_gameState == GameState::Draw;
 }
 
 void Gameplay::UpdateGame() {
@@ -46,7 +52,7 @@ void Gameplay::UpdateGame() {
 		}
 	}
 
-	m_tileManager.SetAllBackgroundColor(DARKBLUE);
+	m_tileManager.ResetAllBackgroundColor();
 	targetedTile = m_tileManager.GetTileAtPos(mousePos);
 
 
@@ -96,6 +102,9 @@ void Gameplay::UpdateGame() {
 				
 			}
 
+			if (m_tileManager.IsBoardFull() && m_gameState != GameState::CircleWin && m_gameState != GameState::SquareWin) {
+				SetGameState(GameState::Draw);
+			}
 
 		}
 	}
@@ -109,4 +118,9 @@ const std::string& Gameplay::GetTopText()
 const std::string& Gameplay::GetBottomText()
 {
 	return m_bottomText;
+}
+
+void Gameplay::ResetGame()
+{
+	SetGameState(GameState::CircleTurn);
 }

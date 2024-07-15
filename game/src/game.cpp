@@ -34,6 +34,27 @@ int main() {
 
 		DrawText(m_gameplay.GetBottomText().c_str(), 520, m_screenHeight - 80, 48, WHITE);
 
+		if (m_gameplay.IsGameEnded()) {
+
+			Rectangle restartRect = { 1000.0f - 10.0f, m_screenCenter.y - 40, 240, 100 };
+
+			DrawRectanglePro(restartRect, { 0, 0}, 0, WHITE);
+			DrawRectangle(1000, m_screenCenter.y - 30, 220, 80, YELLOW);
+			DrawText("Restart Game", 1035, m_screenCenter.y - 10, 25, WHITE);
+			DrawText("Restart Game", 1035, m_screenCenter.y - 5, 24, BLUE);
+
+			if (CheckCollisionPointRec(GetMousePosition(), restartRect)) {
+
+				DrawRectanglePro(restartRect, { 0, 0 }, 0, WHITE); //Overwriting to give illusion of hover.
+
+				if (IsMouseButtonDown(0)) {
+					m_tileManager.ResetGame();
+					m_gameplay.ResetGame();
+				}
+			}
+			
+		}
+
 
 		m_tileManager.DrawTiles();
 

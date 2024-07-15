@@ -62,11 +62,15 @@ public:
 	Tile& GetTileAt(Vector2 a_at);
 	Tile* GetTileAtPos(const Vector2& a_pos);
 
+	bool IsBoardFull();
+
 	void SetAllBackgroundColor(const Color& a_color);
+	void ResetAllBackgroundColor();
 
 	std::vector<Tile*> ProcessPlacementWin(Tile::TileState a_tileState);
 
 	void DrawTiles();
 	
+	void ResetGame();
 
 };

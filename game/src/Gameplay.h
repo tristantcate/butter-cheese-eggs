@@ -21,9 +21,14 @@ class Gameplay {
 	std::string m_topText;
 	std::string m_bottomText;
 
-	void SetGameState(GameState a_to);
+	
 
 public:
+
+	bool IsGameEnded();
+
+	void SetGameState(GameState a_to);
+	GameState GetGameState() { return m_gameState; }
 
 	Gameplay(TileManager& a_tileManager) :
 		m_tileManager(a_tileManager) 
@@ -35,4 +40,6 @@ public:
 
 	const std::string& GetTopText();
 	const std::string& GetBottomText();
+
+	void ResetGame();
 };

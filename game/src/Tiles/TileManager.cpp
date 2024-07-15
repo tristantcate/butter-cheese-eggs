@@ -30,10 +30,28 @@ Tile* TileManager::GetTileAtPos(const Vector2& a_pos)
 	return nullptr;
 }
 
+bool TileManager::IsBoardFull()
+{
+	for (Tile& tile : m_tiles) {
+		if (tile.GetTileState() == Tile::TileState::Empty) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
 void TileManager::SetAllBackgroundColor(const Color& a_color)
 {
 	for (Tile& tile : m_tiles) {
 		tile.SetBackgroundColor(a_color);
+	}
+}
+
+void TileManager::ResetAllBackgroundColor()
+{
+	for (Tile& tile : m_tiles) {
+		tile.ResetBackgroundColor();
 	}
 }
 
@@ -73,5 +91,13 @@ void TileManager::DrawTiles()
 {
 	for (Tile& tile : m_tiles) {
 		tile.Draw();
+	}
+}
+
+void TileManager::ResetGame()
+{
+	for (Tile& tile : m_tiles) {
+		tile.SetTileState(Tile::TileState::Empty);
+		tile.ResetBackgroundColor();
 	}
 }
