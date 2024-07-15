@@ -27,10 +27,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{BE9528FA-AAF8-B79E-537E-F0543FC08321}</ProjectGuid>
+    <ProjectGuid>{885D385E-7441-F9B3-DDA1-F306C9A4E335}</ProjectGuid>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>TicTacToeC++</RootNamespace>
+    <RootNamespace>butter-cheese-eggs</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -97,42 +97,42 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>..\bin\Debug\</OutDir>
     <IntDir>obj\x64\Debug\</IntDir>
-    <TargetName>TicTacToeC++</TargetName>
+    <TargetName>butter-cheese-eggs</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>..\bin\Debug\</OutDir>
     <IntDir>obj\x86\Debug\</IntDir>
-    <TargetName>TicTacToeC++</TargetName>
+    <TargetName>butter-cheese-eggs</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>..\bin\Debug\</OutDir>
     <IntDir>obj\ARM64\Debug\</IntDir>
-    <TargetName>TicTacToeC++</TargetName>
+    <TargetName>butter-cheese-eggs</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>..\bin\Release\</OutDir>
     <IntDir>obj\x64\Release\</IntDir>
-    <TargetName>TicTacToeC++</TargetName>
+    <TargetName>butter-cheese-eggs</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>..\bin\Release\</OutDir>
     <IntDir>obj\x86\Release\</IntDir>
-    <TargetName>TicTacToeC++</TargetName>
+    <TargetName>butter-cheese-eggs</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>..\bin\Release\</OutDir>
     <IntDir>obj\ARM64\Release\</IntDir>
-    <TargetName>TicTacToeC++</TargetName>
+    <TargetName>butter-cheese-eggs</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -268,12 +268,19 @@
     <ClInclude Include="src\Gameplay.h" />
     <ClInclude Include="src\Tiles\Tile.h" />
     <ClInclude Include="src\Tiles\TileManager.h" />
+    <ClInclude Include="src\screens.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\game.cpp" />
     <ClCompile Include="src\Gameplay.cpp" />
     <ClCompile Include="src\Tiles\Tile.cpp" />
     <ClCompile Include="src\Tiles\TileManager.cpp" />
+    <ClCompile Include="src\game.cpp" />
+    <ClCompile Include="src\raylib_game_OLD.c" />
+    <ClCompile Include="src\screen_ending.c" />
+    <ClCompile Include="src\screen_gameplay.c" />
+    <ClCompile Include="src\screen_logo.c" />
+    <ClCompile Include="src\screen_options.c" />
+    <ClCompile Include="src\screen_title.c" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\raylib-master\raylib.vcxproj">
